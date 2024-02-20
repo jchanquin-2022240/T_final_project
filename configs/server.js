@@ -1,6 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const { dbConnection } = require('../db/config');
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import { dbConnection } from './mongoose.js';
 
 class Server {
     constructor() {
@@ -12,7 +14,7 @@ class Server {
 
         this.conectarDB();
         this.middlewares();
-        this.routes();
+        //this.routes();
     }
 
     async conectarDB() {
@@ -23,13 +25,15 @@ class Server {
         this.app.use(express.static('public'));
         this.app.use(cors());
         this.app.use(express.json());
+        this.app.use(helmet());
+        this.app.use(morgan('dev'));
     }
 
-    routes() {
-        this.app.use(this.authPath, require('../routes/auth.routes'));
-        this.app.use(this.personPath, require('../routes/person.routes'));
-        this.app.use(this.cursoPath, require('../routes/course.routes'));
-    }
+    // routes() {
+    //     this.app.use(this.authPath, require('../routes/auth.routes'));
+    //     this.app.use(this.personPath, require('../routes/person.routes'));
+    //     this.app.use(this.cursoPath, require('../routes/course.routes'));
+    // }
 
     listen() {
         this.app.listen(this.port, () => {
@@ -38,4 +42,4 @@ class Server {
     }
 }
 
-module.exports = Server;
+export default Server;
