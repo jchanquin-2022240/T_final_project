@@ -15,7 +15,7 @@ const UserSchema = mongoose.Schema({
     },
     role: {
         type: String,
-        default: "CLIENTE"
+        default: "CLIENT"
     },
     estado: {
         type: Boolean,
