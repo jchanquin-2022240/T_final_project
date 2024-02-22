@@ -1,20 +1,21 @@
+'use strict'
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
+import adminRoutes from '../src/admin/admin.routes.js';
 
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.personPath = '/api/persona';
-        this.cursoPath = '/api/curso';
-        this.authPath = '/api/auth';
+        this.adminPath = '/coffeApi/v1/admin';
 
         this.conectarDB();
         this.middlewares();
-        //this.routes();
+        this.routes();
     }
 
     async conectarDB() {
@@ -29,11 +30,9 @@ class Server {
         this.app.use(morgan('dev'));
     }
 
-    // routes() {
-    //     this.app.use(this.authPath, require('../routes/auth.routes'));
-    //     this.app.use(this.personPath, require('../routes/person.routes'));
-    //     this.app.use(this.cursoPath, require('../routes/course.routes'));
-    // }
+    routes() {
+        this.app.use(this.adminPath, adminRoutes);
+    }
 
     listen() {
         this.app.listen(this.port, () => {

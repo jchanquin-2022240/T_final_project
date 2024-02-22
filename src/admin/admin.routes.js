@@ -6,6 +6,8 @@ import {
 } from "./admin.controller.js";
 
 
+import { validarCampos } from "../middlewares/validar-campos.js";
+
 const router = Router;
 
 router.post(
