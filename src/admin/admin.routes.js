@@ -5,13 +5,13 @@ import {
     adminPost,
 } from "./admin.controller.js";
 
-
+import { esRoleValido } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 
-const router = Router;
+const router = Router();
 
 router.post(
-    "/:id",
+    "/",
     [
         check("nombre", "El nombre es obligatorio").not().isEmpty,
         check("password", "El password debe ser mayor a 8 caracteres").isLength({min: 8}),
