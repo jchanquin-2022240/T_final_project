@@ -16,6 +16,7 @@ router.post(
         check("nombre", "El nombre es obligatorio").not().isEmpty,
         check("password", "El password debe ser mayor a 8 caracteres").isLength({min: 8}),
         check("correo", "Este no es un correo válido").isEmail(),
+        check("role", "El role es obligatorio"),
         check("role").custom(esRoleValido),
         validarCampos,
     ], adminPost);

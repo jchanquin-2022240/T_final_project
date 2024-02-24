@@ -11,7 +11,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.adminPath = '/coffeApi/v1/admin';
+        this.adminPath = '/management/v1/admin';
 
         this.conectarDB();
         this.middlewares();
