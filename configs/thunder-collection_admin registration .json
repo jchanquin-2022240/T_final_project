@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "admin registration ",
+    "dateExported": "2024-02-25T00:59:41.780Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "bf156151-ca24-4e92-ba68-c2eeb8ca5eb6",
+            "colId": "1be14ce2-d0bb-4fbf-bb55-aa6c20ade7f2",
+            "containerId": "",
+            "name": "post admin",
+            "url": "http://localhost:3000/management/v1/admin",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-24T23:14:28.663Z",
+            "modified": "2024-02-25T00:26:10.571Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"admin2\",\n  \"correo\": \"admin2@gmail.com\",\n  \"password\": \"12345678\",\n  \"role\": \"user\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f001a573-b331-4867-8f3e-0692c568439d",
+            "colId": "1be14ce2-d0bb-4fbf-bb55-aa6c20ade7f2",
+            "containerId": "",
+            "name": "get admin",
+            "url": "http://localhost:3000/management/v1/admin",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-25T00:58:19.050Z",
+            "modified": "2024-02-25T00:58:31.601Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

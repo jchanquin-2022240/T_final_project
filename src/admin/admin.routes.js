@@ -3,6 +3,7 @@ import { check } from "express-validator";
 
 import {
     adminPost,
+    adminGet,
 } from "./admin.controller.js";
 
 import { 
@@ -11,6 +12,8 @@ import {
 import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router();
+
+router.get("/", adminGet);
 
 router.post(
     "/",
