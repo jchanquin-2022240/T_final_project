@@ -21,8 +21,8 @@ export const adminGet = async (req, res) => {
 }
 
 export const adminPost = async (req = request, res = response ) => {
-    const{nombre ,correo ,password} = req.body;
-    const admin = new Admin( {nombre, correo, password});
+    const{nombre ,correo ,password, role} = req.body;
+    const admin = new Admin( {nombre, correo, password, role});
 
     const salt = bcryptjs.genSaltSync();
     admin.password = bcryptjs.hashSync(password, salt);

@@ -3,9 +3,11 @@ import Admin from '../admin/admin.model.js';
 import User from '../user/user.model.js';
 
 export const esRoleValido = async (role = '') => {
-    const existeRole = await Role.findOne({role});
-    if (!existeRole) {
-        throw new Error(`El role ${role} no existe en la base de datos`);
+    if (role) {
+        const existeRole = await Role.findOne({role});
+        if (!existeRole) {
+            throw new Error(`El role ${role} no existe en la base de datos`);
+        }
     }
 }
 

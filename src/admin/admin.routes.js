@@ -22,6 +22,7 @@ router.post(
         check("password", "El password debe ser mayor a 8 caracteres").isLength({min: 8}),
         check("correo", "Este no es un correo válido").isEmail(),
         check("correo").custom(existsEmailAdmin),
+        check("role").custom(esRoleValido),
         validarCampos,
     ], adminPost);
 
