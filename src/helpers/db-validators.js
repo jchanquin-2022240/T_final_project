@@ -10,7 +10,7 @@ export const esRoleValido = async (role = '') => {
 
 export const existsEmail = async (correo = '') => {
     const existsEmails = await Admin.findOne({correo});
-    if (!existsEmails) {
+    if (existsEmails) {
         throw new Error(`El correo ${correo} ya existe en la base de datos`);
     }
 }

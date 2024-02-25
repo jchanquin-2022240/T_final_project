@@ -5,7 +5,9 @@ import {
     adminPost,
 } from "./admin.controller.js";
 
-import { esRoleValido } from "../helpers/db-validators.js";
+import { 
+    esRoleValido,
+    existsEmail } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router();
@@ -13,11 +15,10 @@ const router = Router();
 router.post(
     "/",
     [
-        check("nombre", "El nombre es obligatorio").not().isEmpty,
+        check("nombre", "El nombre es obligatorio").not().isEmpty(),
         check("password", "El password debe ser mayor a 8 caracteres").isLength({min: 8}),
         check("correo", "Este no es un correo válido").isEmail(),
-        check("role", "El role es obligatorio"),
-        check("role").custom(esRoleValido),
+        check("correo").custom(existsEmail),
         validarCampos,
     ], adminPost);
 

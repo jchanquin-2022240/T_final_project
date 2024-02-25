@@ -4,10 +4,10 @@ import Admin from './admin.model.js';
 
 
 export const adminPost = async (req = request, res = response ) => {
-    const{nombre ,correo ,password, role} = req.body;
-    const admin = new Admin( {nombre, correo, password, role});
+    const{nombre ,correo ,password} = req.body;
+    const admin = new Admin( {nombre, correo, password});
 
-    const salt = bcriptjs.genSaltSync();
+    const salt = bcryptjs.genSaltSync();
     admin.password = bcryptjs.hashSync(password, salt);
     
     await admin.save();
