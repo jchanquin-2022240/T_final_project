@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "user registration",
+    "dateExported": "2024-02-26T15:40:47.566Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "aae800e3-d7b8-42e5-a233-3701e134c947",
+            "colId": "84f057a4-c930-4356-bdd0-b492dc6109d7",
+            "containerId": "",
+            "name": "post user",
+            "url": "http://localhost:3000/management/v1/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-25T19:08:38.544Z",
+            "modified": "2024-02-25T20:53:13.688Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"user8\",\n  \"correo\": \"user8@gmail.com\",\n  \"password\": \"12345678\",\n  \"role\": \"\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
