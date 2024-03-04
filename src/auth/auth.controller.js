@@ -1,17 +1,21 @@
 import bcryptjs from 'bcryptjs';
 import User from '../user/user.model.js';
-//import Admin from '../admin/admin.model.js';
+import Admin from '../admin/admin.model.js';
 
 
 export const login = async (req, res) => {
     const { correo, password } = req.body;
     try {
-        const user = await User.findOne({ correo });
+        let user = await Admin.findOne({correo});
 
         if (!user) {
-            return res.status(400).json({
-                msg: "Credenciales incorrectas, Correo no existe en la base de datos"
-            });
+            user = await User.findOne({correo})
+            if(!user){
+                
+                return res.status(400).json({
+                    msg: "Credenciales incorrectas, Correo no existe en la base de datos"
+                });
+            }
         }
 
         if (!user.estado) {
