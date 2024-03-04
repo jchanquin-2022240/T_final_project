@@ -10,10 +10,11 @@ import {
     esRoleValido,
     existsEmailAdmin } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
+import { validateJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
 
-router.get("/", adminGet);
+router.get("/", validateJWT, adminGet);
 
 router.post(
     "/",

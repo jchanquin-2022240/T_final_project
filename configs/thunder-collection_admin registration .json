@@ -1,40 +1,45 @@
 {
     "client": "Thunder Client",
     "collectionName": "admin registration ",
-    "dateExported": "2024-02-25T00:59:41.780Z",
+    "dateExported": "2024-03-04T22:29:54.497Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "bf156151-ca24-4e92-ba68-c2eeb8ca5eb6",
-            "colId": "1be14ce2-d0bb-4fbf-bb55-aa6c20ade7f2",
+            "_id": "4032fa96-245c-4813-9940-4edebc3145ab",
+            "colId": "ca20e4d5-f747-4637-86d1-aa9e39081d3b",
             "containerId": "",
             "name": "post admin",
             "url": "http://localhost:3000/management/v1/admin",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-24T23:14:28.663Z",
-            "modified": "2024-02-25T00:26:10.571Z",
+            "created": "2024-03-04T20:36:16.243Z",
+            "modified": "2024-03-04T20:44:39.962Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"admin2\",\n  \"correo\": \"admin2@gmail.com\",\n  \"password\": \"12345678\",\n  \"role\": \"user\"\n}",
+                "raw": "{\n  \"nombre\": \"admin1\",\n  \"correo\": \"admin1@gmail.com\",\n  \"password\": \"12345678\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "f001a573-b331-4867-8f3e-0692c568439d",
-            "colId": "1be14ce2-d0bb-4fbf-bb55-aa6c20ade7f2",
+            "_id": "74b006c5-a6c7-4737-b46c-bcb31a1518e4",
+            "colId": "ca20e4d5-f747-4637-86d1-aa9e39081d3b",
             "containerId": "",
             "name": "get admin",
             "url": "http://localhost:3000/management/v1/admin",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-25T00:58:19.050Z",
-            "modified": "2024-02-25T00:58:31.601Z",
-            "headers": [],
+            "created": "2024-03-04T20:36:16.244Z",
+            "modified": "2024-03-04T22:29:17.870Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2MzJiNzJmNTI2M2E3MjkxNTkzYWUiLCJpYXQiOjE3MDk1OTEzNTAsImV4cCI6MTcwOTU5ODU1MH0.Mz1myewJ6uM9lYiMz2k6oTuKP0JA9DOoaoOlm7Fj6mc"
+                }
+            ],
             "params": [],
             "tests": []
         }

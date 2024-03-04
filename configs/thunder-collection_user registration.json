@@ -1,25 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "user registration",
-    "dateExported": "2024-02-26T15:40:47.566Z",
+    "dateExported": "2024-03-04T22:30:08.840Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "aae800e3-d7b8-42e5-a233-3701e134c947",
-            "colId": "84f057a4-c930-4356-bdd0-b492dc6109d7",
+            "_id": "65a7023c-27eb-4fa2-8afe-68163a3618d7",
+            "colId": "0bf6e381-26f3-4e1f-b8e3-fa66dc349c54",
             "containerId": "",
             "name": "post user",
             "url": "http://localhost:3000/management/v1/user",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-25T19:08:38.544Z",
-            "modified": "2024-02-25T20:53:13.688Z",
+            "created": "2024-03-04T20:36:16.278Z",
+            "modified": "2024-03-04T20:44:57.387Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"user8\",\n  \"correo\": \"user8@gmail.com\",\n  \"password\": \"12345678\",\n  \"role\": \"\"\n}",
+                "raw": "{\n  \"nombre\": \"user1\",\n  \"correo\": \"user1@gmail.com\",\n  \"password\": \"12345678\"\n}",
                 "form": []
             },
             "tests": []
