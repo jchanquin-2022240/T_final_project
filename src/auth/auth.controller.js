@@ -1,6 +1,7 @@
 import bcryptjs from 'bcryptjs';
 import User from '../user/user.model.js';
 import Admin from '../admin/admin.model.js';
+import { generateJWT } from '../helpers/generar-jwt.js';
 
 
 export const login = async (req, res) => {
@@ -31,9 +32,12 @@ export const login = async (req, res) => {
             });
         }
 
+        const token = await generateJWT( user.id);
+
         res.status(200).json({
             msg: 'Bienvenido!!!',
-            user
+            user,
+            token
         });
 
     } catch (e) {
