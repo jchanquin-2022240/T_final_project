@@ -21,12 +21,14 @@ export const listProduct = async (req, res) => {
 }
 
 export const editProduct = async (req, res) => {
-    const { id } = req.params;
+    const { nombre } = req.params;
     const {_id, ...resto} = req.body;
 
-    await Product.findByIdAndUpdate(id, resto);
+    const product = await Product.findOneAndUpdate({ nombre: nombre }, resto, { new: true });
 
-    const product = await Product.findOne({_id: id});
+    //await Product.findByIdAndUpdate(id, resto);
+
+    //const product = await Product.findOne({_id: id});
 
     res.status(200).json({msg: 'Product successfully updated', product});
 }

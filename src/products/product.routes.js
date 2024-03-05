@@ -29,12 +29,12 @@ router.post(
     ], addProduct);
 
 router.put(
-    "/updateProduct/:id",
+    "/updateProduct/:nombre",
     [
         validateJWT,
-        check('id', "Invalid ID").isMongoId(),
-        check('id').custom(existingProductById),
-        check('nombre').custom(existingName),
+        check('nombre', "Invalid").notEmpty(),
+//        check('id').custom(existingProductById),
+//        check('nombre').custom(existingName),
         validarCampos
     ], editProduct);
 
