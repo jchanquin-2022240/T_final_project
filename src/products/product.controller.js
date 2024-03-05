@@ -8,3 +8,14 @@ export const addProduct = async (req, res) => {
 
     res.status(200).json({ msg: 'Product was added successfully!!!', product });
 }
+
+export const listProduct = async (req, res) => {
+    const query = {productEstado: true}
+
+    const[total, product] = await Promise.all([
+        Product.countDocuments(query),
+        Product.find(query)
+    ]);
+
+    res.status(200).json({ msg: 'Product', total, product});
+}
