@@ -19,3 +19,14 @@ export const listProduct = async (req, res) => {
 
     res.status(200).json({ msg: 'Product', total, product});
 }
+
+export const editProduct = async (req, res) => {
+    const { id } = req.params;
+    const {_id, ...resto} = req.body;
+
+    await Product.findByIdAndUpdate(id, resto);
+
+    const product = await Product.findOne({_id: id});
+
+    res.status(200).json({msg: 'Product successfully updated', product});
+}

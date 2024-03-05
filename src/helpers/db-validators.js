@@ -36,3 +36,10 @@ export const existingName = async (nombre = '') => {
     }
 
 }
+
+export const existingProductById = async (id = '') => {
+    const existById = await Product.findById(id);
+    if (!existById) {
+        throw new Error(`The ID ${id} does not exist in the database`);
+    }
+}

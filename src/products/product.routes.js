@@ -3,13 +3,14 @@ import { check } from 'express-validator';
 
 import {
     addProduct,
-    listProduct
+    listProduct,
+    editProduct,
 } from "./product.controller.js";
 
 import { validarCampos  } from "../middlewares/validar-campos.js";
 
 import  { validateJWT } from "../middlewares/validar-jwt.js";
-import  { existingName } from "../helpers/db-validators.js";
+import  { existingName, existingProductById } from "../helpers/db-validators.js";
 
 const router = Router();
 
@@ -27,5 +28,14 @@ router.post(
         validarCampos,
     ], addProduct);
 
+router.put(
+    "/updateProduct/:id",
+    [
+        validateJWT,
+        check('id', "Invalid ID").isMongoId(),
+        check('id').custom(existingProductById),
+        check('nombre').custom(existingName),
+        validarCampos
+    ], editProduct);
 
 export default router;
