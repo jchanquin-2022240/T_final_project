@@ -1,6 +1,7 @@
 import Role from '../roles/role.model.js';
 import Admin from '../admin/admin.model.js';
 import User from '../user/user.model.js';
+import Product from '../products/product.model.js';
 
 export const esRoleValido = async (role = '') => {
     if (role) {
@@ -20,10 +21,18 @@ export const existsEmailAdmin = async (correo = '') => {
 }
 
 //User
- export const existsEmailClient = async (correo = '') => {
+export const existsEmailClient = async (correo = '') => {
     const existsEmails = await User.findOne({correo});
     if (existsEmails) {
         throw new Error(`El correo ${correo} ya esta registrado en la base de datos`);
     }
- }
+}
 
+//products
+export const existingName = async (nombre = '') => {
+    const existsName = await Product.findOne({nombre});
+    if (existsName) {
+        throw new Error(`The name ${nombre} already exists in the database`);
+    }
+
+}
