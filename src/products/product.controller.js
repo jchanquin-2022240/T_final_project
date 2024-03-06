@@ -26,9 +26,5 @@ export const editProduct = async (req, res) => {
 
     const product = await Product.findOneAndUpdate({ nombre: nombre }, resto, { new: true });
 
-    //await Product.findByIdAndUpdate(id, resto);
-
-    //const product = await Product.findOne({_id: id});
-
     res.status(200).json({msg: 'Product successfully updated', product});
 }

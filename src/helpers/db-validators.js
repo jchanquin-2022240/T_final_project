@@ -34,7 +34,6 @@ export const existingName = async (nombre = '') => {
     if (existsName) {
         throw new Error(`The name ${nombre} already exists in the database`);
     }
-
 }
 
 export const existingProductById = async (id = '') => {

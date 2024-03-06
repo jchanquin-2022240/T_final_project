@@ -10,7 +10,7 @@ import {
 import { validarCampos  } from "../middlewares/validar-campos.js";
 
 import  { validateJWT } from "../middlewares/validar-jwt.js";
-import  { existingName, existingProductById } from "../helpers/db-validators.js";
+import { existingName } from "../helpers/db-validators.js";
 
 const router = Router();
 
@@ -33,8 +33,6 @@ router.put(
     [
         validateJWT,
         check('nombre', "Invalid").notEmpty(),
-//        check('id').custom(existingProductById),
-//        check('nombre').custom(existingName),
         validarCampos
     ], editProduct);
 
