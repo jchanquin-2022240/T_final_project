@@ -28,3 +28,11 @@ export const editProduct = async (req, res) => {
 
     res.status(200).json({msg: 'Product successfully updated', product});
 }
+
+export const deleteProduct = async (req, res) => {
+    const { nombre } = req.params;
+
+    await Product.findOneAndUpdate({ nombre: nombre }, { productEstado: false });
+
+    res.status(200).json({ msg: 'Product successfully removed'});
+}

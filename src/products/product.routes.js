@@ -5,12 +5,13 @@ import {
     addProduct,
     listProduct,
     editProduct,
+    deleteProduct
 } from "./product.controller.js";
 
 import { validarCampos  } from "../middlewares/validar-campos.js";
 
 import  { validateJWT } from "../middlewares/validar-jwt.js";
-import { existingName } from "../helpers/db-validators.js";
+import { existingName} from "../helpers/db-validators.js";
 
 const router = Router();
 
@@ -35,5 +36,13 @@ router.put(
         check('nombre', "Invalid").notEmpty(),
         validarCampos
     ], editProduct);
+
+router.delete(
+    "/deleteProduct/:nombre",
+    [
+        validateJWT,
+        check('nombre', "Invalid").notEmpty(),
+        validarCampos
+    ], deleteProduct);
 
 export default router;
