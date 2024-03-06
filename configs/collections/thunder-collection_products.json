@@ -1,0 +1,98 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "products",
+    "dateExported": "2024-03-06T14:40:44.710Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d5a3ca42-5aa9-40bb-b9f5-20bc317f9566",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "post addProduct",
+            "url": "http://localhost:3000/management/v1/product",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T20:03:12.942Z",
+            "modified": "2024-03-05T22:45:49.854Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk2NjkzMTEsImV4cCI6MTcwOTY3NjUxMX0.03-Q6e-p9fD2GaRrF6mmb3SvDYq1yptm-6AX3ojgEh0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"NutriLecha\",\n  \"descripcion\": \"Leche deslactosada\",\n  \"categoria\": \"Lactios\",\n  \"precio\": \"9.50\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "6bb08196-d476-47f9-9d72-774bf1d7879f",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "get listProduct",
+            "url": "http://localhost:3000/management/v1/product",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T20:51:34.677Z",
+            "modified": "2024-03-06T14:39:42.782Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk3MzM3MDksImV4cCI6MTcwOTc0MDkwOX0.OMZTPdU_S8vL7v-i-dCD9ept97F730UFnZY0P6oU5D4"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "7ced3e0f-c04b-49f4-81a0-838c45edab6f",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "put editProduct",
+            "url": "http://localhost:3000/management/v1/product/updateProduct/Pan",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-05T22:09:31.210Z",
+            "modified": "2024-03-06T14:32:00.549Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk3MzM3MDksImV4cCI6MTcwOTc0MDkwOX0.OMZTPdU_S8vL7v-i-dCD9ept97F730UFnZY0P6oU5D4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Pan Europa\",\n  \"descripcion\": \"Pan integral\",\n  \"categoria\": \"carboidratos\",\n  \"precio\": \"30.00\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "da729b4f-3f97-4c56-b17c-4db408b8ea08",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "delete deleteProduct",
+            "url": "http://localhost:3000/management/v1/product/deleteProduct/Pan",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-06T14:33:47.746Z",
+            "modified": "2024-03-06T14:37:57.859Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk3MzM3MDksImV4cCI6MTcwOTc0MDkwOX0.OMZTPdU_S8vL7v-i-dCD9ept97F730UFnZY0P6oU5D4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
