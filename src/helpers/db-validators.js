@@ -1,6 +1,7 @@
 import Role from '../roles/role.model.js';
 import Admin from '../admin/admin.model.js';
 import User from '../user/user.model.js';
+import Category from '../category/category.model.js';
 
 export const esRoleValido = async (role = '') => {
     if (role) {
@@ -27,3 +28,10 @@ export const existsEmailAdmin = async (correo = '') => {
     }
  }
 
+//Category
+export const existsCategory = async (nombre = '') => {
+    const existsCategory = await Category.findOne({nombre});
+    if (existsCategory) {
+        throw new Error(`La categoria ${nombre} ya existe en la base de datos`);
+    }
+}

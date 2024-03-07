@@ -1,10 +1,24 @@
-import Router from 'express';
-import check from 'express-validator';
+import { Router } from 'express';
+import { check } from 'express-validator';
 
 import {
     productPost
-} from './category.controller';
+} from './category.controller.js';
 
-import { validarCampos } from '../middlewares/validar-campos';
+import { validarCampos } from '../middlewares/validar-campos.js';
+import { validateJWT } from '../middlewares/validar-jwt.js';
+import { existsCategory } from '../helpers/db-validators.js';
 
-router.post 
+const router = Router();
+
+router.post (
+    "/",
+    [
+        validateJWT,
+        check('nombre', "The name cannot be empty").not().isEmpty(),
+        check('nombre').custom(existsCategory),
+        check('descripcion', "The description cannot be empty").not().isEmpty(),
+        validarCampos
+    ], productPost);
+
+export default router;
