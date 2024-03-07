@@ -26,6 +26,7 @@ router.post(
         check("descripcion", "The description cannot be empty").not().isEmpty(),
         check("categoria").custom(existsCategoryName),
         check("precio", " The price cannot be empty").not().isEmpty().isNumeric(),
+        check("stock", "El estock no puede estar vacío").not().isEmpty(),
         validarCampos,
     ], addProduct);
 

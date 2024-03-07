@@ -17,6 +17,10 @@ export const ProductSchema = mongoose.Schema({
         type: Number,
         require: [true, 'Price is required']
     },
+    stock:{
+        type: Number,
+        require: [true, 'Stock is required']
+    },
     productEstado:{
         type: Boolean,
         default: true

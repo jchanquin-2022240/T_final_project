@@ -8,7 +8,7 @@ export const addProduct = async (req, res) => {
     if (!category) {
         return res.status(400).json({ msg: 'Category not found'});
     }
-
+    
     const newProduct = new Product({
         ...data,
         categoria: category._id
