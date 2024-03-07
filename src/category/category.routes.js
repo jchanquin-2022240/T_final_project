@@ -3,12 +3,13 @@ import { check } from 'express-validator';
 
 import {
     productPost,
-    listCategory
+    listCategory,
+    updateCategory
 } from './category.controller.js';
 
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validateJWT } from '../middlewares/validar-jwt.js';
-import { existsCategory } from '../helpers/db-validators.js';
+import { existsCategoryName } from '../helpers/db-validators.js';
 
 const router = Router();
 
@@ -19,9 +20,17 @@ router.post (
     [
         validateJWT,
         check('nombre', "The name cannot be empty").not().isEmpty(),
-        check('nombre').custom(existsCategory),
+        check('nombre').custom(existsCategoryName),
         check('descripcion', "The description cannot be empty").not().isEmpty(),
         validarCampos
     ], productPost);
+
+router.put (
+    "/updateCategory/:nombre",
+    [
+        validateJWT,
+        check('nombre', "The name cannot be empty").not().isEmpty(),
+        validarCampos
+    ], updateCategory);
 
 export default router;

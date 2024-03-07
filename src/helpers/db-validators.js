@@ -29,7 +29,7 @@ export const existsEmailAdmin = async (correo = '') => {
  }
 
 //Category
-export const existsCategory = async (nombre = '') => {
+export const existsCategoryName = async (nombre = '') => {
     const existsCategory = await Category.findOne({nombre});
     if (existsCategory) {
         throw new Error(`La categoria ${nombre} ya existe en la base de datos`);

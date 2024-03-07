@@ -29,3 +29,15 @@ export const listCategory = async (req, res) => {
     });
 }
 
+export const updateCategory = async (req, res) => {
+    const { nombre } = req.params;
+    const { _id, name, categoryEstado, ...resto } = req.body;
+
+    const category = await Category.findOneAndUpdate({nombre: nombre}, resto);
+
+    res.status(200).json({
+        msg: 'Category updated',
+        category
+    });
+}
+
