@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "products",
-    "dateExported": "2024-03-06T14:40:44.710Z",
+    "dateExported": "2024-03-07T15:10:31.705Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T20:03:12.942Z",
-            "modified": "2024-03-05T22:45:49.854Z",
+            "modified": "2024-03-07T15:09:22.881Z",
             "headers": [
                 {
                     "name": "new-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk2NjkzMTEsImV4cCI6MTcwOTY3NjUxMX0.03-Q6e-p9fD2GaRrF6mmb3SvDYq1yptm-6AX3ojgEh0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjM4MjIsImV4cCI6MTcwOTgzMTAyMn0.h5SVIfxg6_96GnsmVA5mrP2o50SjXWhtZlhqolzQQXk"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"NutriLecha\",\n  \"descripcion\": \"Leche deslactosada\",\n  \"categoria\": \"Lactios\",\n  \"precio\": \"9.50\"\n}",
+                "raw": "{\n  \"nombre\": \"Jabón\",\n  \"descripcion\": \"Leche deslactosada\",\n  \"categoria\": \"liquido\",\n  \"precio\": \"9.50\"\n}",
                 "form": []
             },
             "reqType": "post",
