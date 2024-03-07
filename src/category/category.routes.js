@@ -4,7 +4,8 @@ import { check } from 'express-validator';
 import {
     productPost,
     listCategory,
-    updateCategory
+    updateCategory,
+    deleteCategory
 } from './category.controller.js';
 
 import { validarCampos } from '../middlewares/validar-campos.js';
@@ -33,4 +34,13 @@ router.put (
         validarCampos
     ], updateCategory);
 
-export default router;
+router.delete( 
+    "/deleteCategory/:nombre",
+    [
+        validateJWT,
+        check('nombre', "The name cannot be empty").not().isEmpty(),
+        validarCampos
+    ], deleteCategory);
+
+    export default router;
+

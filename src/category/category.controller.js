@@ -41,3 +41,13 @@ export const updateCategory = async (req, res) => {
     });
 }
 
+export const deleteCategory = async (req, res) => {
+    const { nombre } = req.params;
+
+    const category = await Category.findOneAndUpdate({ nombre: nombre }, { categoryEstado: false});
+
+    res.status(200).json({
+        msg: 'Category deleted',
+        category
+    });
+}
