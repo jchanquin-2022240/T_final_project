@@ -11,3 +11,21 @@ export const productPost = async (req, res) => {
     });
 }
 
+
+export const listCategory = async (req, res) => {
+    const { limite, desde } = req.query;
+    const query = { categoryEstado: true };
+    const [total, categories] = await Promise.all([
+        Category.countDocuments(query),
+        Category.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+    ]);
+
+    res.status(200).json({
+        msg: 'List of categories: ',
+        total,
+        categories
+    });
+}
+

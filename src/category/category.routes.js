@@ -2,7 +2,8 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 
 import {
-    productPost
+    productPost,
+    listCategory
 } from './category.controller.js';
 
 import { validarCampos } from '../middlewares/validar-campos.js';
@@ -10,6 +11,8 @@ import { validateJWT } from '../middlewares/validar-jwt.js';
 import { existsCategory } from '../helpers/db-validators.js';
 
 const router = Router();
+
+router.get("/", validateJWT, listCategory);
 
 router.post (
     "/",
