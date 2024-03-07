@@ -10,8 +10,8 @@ export const ProductSchema = mongoose.Schema({
         require: [true, 'Description is required']
     },
     categoria:{
-        type: String,
-        require: [true, 'Category is required']
+        type: mongoose.Schema.Types.ObjectId,
+        require: true
     },
     precio: {
         type: Number,

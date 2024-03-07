@@ -1,12 +1,25 @@
 import Product from './product.model.js';
+import Category from '../category/category.model.js';
 
 export const addProduct = async (req, res) => {
-    const{ nombre, descripcion, categoria, precio} = req.body;
-    const product = new Product( {nombre, descripcion, categoria, precio});
+    const data = req.body;
+    const category = await Category.findOne({ nombre: data.categoria });
 
-    await product.save();
+    if (!category) {
+        return res.status(400).json({ msg: 'Category not found'});
+    }
 
-    res.status(200).json({ msg: 'Product was added successfully!!!', product });
+    const newProduct = new Product({
+        ...data,
+        categoria: category._id
+    });
+
+    await newProduct.save();
+
+    category.products.push(newProduct._id);
+    await category.save();
+
+    res.status(201).json({ msg: 'Product successfully added', newProduct});
 }
 
 export const listProduct = async (req, res) => {

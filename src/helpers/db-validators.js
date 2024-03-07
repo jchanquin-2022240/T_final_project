@@ -47,7 +47,7 @@ export const existingProductById = async (id = '') => {
 //category
 export const existsCategoryName = async (nombre = '')  => {
     const existsName = await Category.findOne({ nombre });
-    if (existsName) {
-        throw new Error(`The name ${nombre} already exists in the database`);
+    if (!existsName) {
+        throw new Error(`The name ${nombre} no exists in the database`);
     }
 }
