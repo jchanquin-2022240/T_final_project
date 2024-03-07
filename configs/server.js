@@ -43,6 +43,7 @@ class Server {
         this.app.use(this.adminPath, adminRoutes);
         this.app.use(this.userPath, userRoutes);
         this.app.use(this.productPath, productRoutes);
+        this.app.use(this.categoryPath, categoryRoutes);
     }
 
     listen() {
