@@ -1,0 +1,95 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "category",
+    "dateExported": "2024-03-07T14:38:47.670Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4eee2e25-252f-409f-98d9-0356fb37826f",
+            "colId": "4d499283-f289-48f4-8a79-a760ad872780",
+            "containerId": "",
+            "name": "post addCategory",
+            "url": "http://localhost:3000/management/v1/category",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-07T07:01:10.404Z",
+            "modified": "2024-03-07T14:08:06.508Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjA0NzEsImV4cCI6MTcwOTgyNzY3MX0.MWfqHGBfSKTfNq2PMLwH5ZLK6aJrZQPu1SCvdQjtZao"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Liquido\",\n  \"descripcion\": \"bebidas alcoholicas y con azúcar\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a1b1a79-6a9f-44af-b770-10e306dc29e8",
+            "colId": "4d499283-f289-48f4-8a79-a760ad872780",
+            "containerId": "",
+            "name": "get listCategory",
+            "url": "http://localhost:3000/management/v1/category",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-07T14:12:38.576Z",
+            "modified": "2024-03-07T14:12:54.566Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjA0NzEsImV4cCI6MTcwOTgyNzY3MX0.MWfqHGBfSKTfNq2PMLwH5ZLK6aJrZQPu1SCvdQjtZao"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc7a11bd-9d72-4579-8788-32d912312c09",
+            "colId": "4d499283-f289-48f4-8a79-a760ad872780",
+            "containerId": "",
+            "name": "put updateCategory",
+            "url": "http://localhost:3000/management/v1/category/updateCategory/Liquido",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-07T14:17:31.841Z",
+            "modified": "2024-03-07T14:26:27.142Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjA0NzEsImV4cCI6MTcwOTgyNzY3MX0.MWfqHGBfSKTfNq2PMLwH5ZLK6aJrZQPu1SCvdQjtZao"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descripcion\": \"Bebidas refrescantes\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "66b17593-7354-4fd4-8fd0-9cfdb6df18d4",
+            "colId": "4d499283-f289-48f4-8a79-a760ad872780",
+            "containerId": "",
+            "name": "delete deleteCategory",
+            "url": "http://localhost:3000/management/v1/category/deleteCategory/Liquido",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-07T14:35:21.446Z",
+            "modified": "2024-03-07T14:37:43.561Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjA0NzEsImV4cCI6MTcwOTgyNzY3MX0.MWfqHGBfSKTfNq2PMLwH5ZLK6aJrZQPu1SCvdQjtZao"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
