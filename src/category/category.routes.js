@@ -9,6 +9,7 @@ import {
 } from './category.controller.js';
 
 import { validarCampos } from '../middlewares/validar-campos.js';
+import { esAdminRole } from '../middlewares/validar-role.js';
 import { validateJWT } from '../middlewares/validar-jwt.js';
 import { existsCategoryName } from '../helpers/db-validators.js';
 
@@ -20,6 +21,7 @@ router.post (
     "/",
     [
         validateJWT,
+        esAdminRole,    
         check('nombre', "The name cannot be empty").not().isEmpty(),
         check('nombre').custom(existsCategoryName),
         check('descripcion', "The description cannot be empty").not().isEmpty(),
@@ -30,6 +32,7 @@ router.put (
     "/updateCategory/:nombre",
     [
         validateJWT,
+        esAdminRole,
         check('nombre', "The name cannot be empty").not().isEmpty(),
         validarCampos
     ], updateCategory);
@@ -38,6 +41,7 @@ router.delete(
     "/deleteCategory/:nombre",
     [
         validateJWT,
+        esAdminRole,
         check('nombre', "The name cannot be empty").not().isEmpty(),
         validarCampos
     ], deleteCategory);
