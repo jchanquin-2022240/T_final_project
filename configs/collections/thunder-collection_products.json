@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "products",
-    "dateExported": "2024-03-07T15:10:31.705Z",
+    "dateExported": "2024-03-08T16:03:29.890Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T20:03:12.942Z",
-            "modified": "2024-03-07T15:09:22.881Z",
+            "modified": "2024-03-08T13:29:42.378Z",
             "headers": [
                 {
                     "name": "new-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk4MjM4MjIsImV4cCI6MTcwOTgzMTAyMn0.h5SVIfxg6_96GnsmVA5mrP2o50SjXWhtZlhqolzQQXk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRiOTA5YzY3MTg1YTRkZjViMzVkZTQiLCJpYXQiOjE3MDk5MDQ1NjksImV4cCI6MTcwOTkxMTc2OX0.-G74D1eo1n0ouUwhVmqtkzRJsVgJG8I2aXknS0PEHS4"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Jabón\",\n  \"descripcion\": \"Leche deslactosada\",\n  \"categoria\": \"liquido\",\n  \"precio\": \"9.50\"\n}",
+                "raw": "{\n  \"nombre\": \"Modelo\",\n  \"descripcion\": \"Producto con alcohol\",\n  \"categoria\": \"Liquido\",\n  \"precio\": 11,\n  \"stock\": 50\n}",
                 "form": []
             },
             "reqType": "post",
@@ -39,11 +39,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-05T20:51:34.677Z",
-            "modified": "2024-03-06T14:39:42.782Z",
+            "modified": "2024-03-08T13:31:26.660Z",
             "headers": [
                 {
                     "name": "new-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk3MzM3MDksImV4cCI6MTcwOTc0MDkwOX0.OMZTPdU_S8vL7v-i-dCD9ept97F730UFnZY0P6oU5D4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk5MDQ2NzcsImV4cCI6MTcwOTkxMTg3N30.QmApkDumiksJuMKYI6teMwWJ_48Ctv4jqd2zhhWlbJ4"
                 }
             ],
             "params": [],
@@ -89,6 +89,25 @@
                 {
                     "name": "new-token",
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk3MzM3MDksImV4cCI6MTcwOTc0MDkwOX0.OMZTPdU_S8vL7v-i-dCD9ept97F730UFnZY0P6oU5D4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2df170c3-3ea8-4c7e-b885-3fcb6ae7b75a",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "get listProductByName",
+            "url": "http://localhost:3000/management/v1/product/Gallo",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-08T16:01:28.606Z",
+            "modified": "2024-03-08T16:02:24.617Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhODkyMjA5MjBiMTgxNTkxMWZlOWYiLCJpYXQiOjE3MDk5MTM3MzMsImV4cCI6MTcwOTkyMDkzM30.y4U949QQgSrmQLKoJFwYuEuJ3LD3zdCVXUgL4tey_o0"
                 }
             ],
             "params": [],
