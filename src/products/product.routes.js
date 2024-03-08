@@ -5,7 +5,8 @@ import {
     addProduct,
     listProduct,
     editProduct,
-    deleteProduct
+    deleteProduct,
+    listProductByName
 } from "./product.controller.js";
 
 import { validarCampos } from "../middlewares/validar-campos.js";
@@ -18,6 +19,8 @@ import { esAdminRole } from '../middlewares/validar-role.js';
 const router = Router();
 
 router.get("/", validateJWT, listProduct);
+
+router.get("/:nombre", validateJWT, listProductByName);
 
 router.post(
     "/",

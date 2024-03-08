@@ -22,6 +22,14 @@ export const addProduct = async (req, res) => {
     res.status(201).json({ msg: 'Product successfully added', newProduct});
 }
 
+export const listProductByName = async (req, res) => {
+    const { nombre } = req.params;
+
+    const product = await Product.findOne({ nombre: nombre });
+
+    res.status(200).json({ msg: 'Product', product});
+}
+
 export const listProduct = async (req, res) => {
     const query = {productEstado: true}
 
