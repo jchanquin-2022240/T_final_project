@@ -9,10 +9,11 @@ export const ProductSchema = mongoose.Schema({
         type: String,
         require: [true, 'Description is required']
     },
-    categoria:{
+    categoria:[{
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
         require: true
-    },
+    }],
     precio: {
         type: Number,
         require: [true, 'Price is required']

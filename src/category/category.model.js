@@ -9,7 +9,7 @@ export const CategorySchema = mongoose.Schema({
         type: String,
         required: [true, 'Description is required']     
     },
-    products: {
+    products:{
         type: [mongoose.Schema.Types.ObjectId],
         required: true
     },

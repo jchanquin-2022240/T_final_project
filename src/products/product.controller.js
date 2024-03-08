@@ -31,15 +31,27 @@ export const listProductByName = async (req, res) => {
 }
 
 export const listProduct = async (req, res) => {
-    const query = {productEstado: true}
+    const { limite, desde } = req.query;
 
-    const[total, product] = await Promise.all([
-        Product.countDocuments(query),
-        Product.find(query)
-    ]);
+    try {
+        const [total, product] = await Promise.all([
+            Product.countDocuments({ productEstado: true }),
+            Product.find({ productEstado: true })
+                .populate('categoria', 'nombre')  // Agrega esta línea para hacer el populate del campo 'categoria' y obtener solo el campo 'nombre'
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
 
-    res.status(200).json({ msg: 'Product', total, product});
-}
+        res.status(200).json({
+            total,
+            product
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'There was an error when obtaining the products.' });
+    }
+};
+
 
 export const editProduct = async (req, res) => {
     const { nombre } = req.params;
