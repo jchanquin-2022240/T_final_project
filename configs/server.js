@@ -10,6 +10,7 @@ import userRoutes from '../src/user/user.routes.js';
 import productRoutes from '../src/products/product.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import categoryRoutes from '../src/category/category.routes.js';
+import { newAdmin } from '../src/admin/admin.controller.js';
 
 class Server {
     constructor() {
@@ -28,6 +29,7 @@ class Server {
 
     async conectarDB() {
         await dbConnection();
+        await newAdmin();
     }
 
     middlewares() {

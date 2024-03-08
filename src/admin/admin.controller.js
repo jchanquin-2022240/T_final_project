@@ -33,3 +33,21 @@ export const adminPost = async (req = request, res = response ) => {
         admin
     });
 }
+
+export const newAdmin = async(res) => {
+    const admin = await Admin.findOne({ correo: 'administrador@gmail.com' })
+
+    if(admin) {
+        res.status(400).json({ msg: 'The administrador already exist' });
+    } else {
+        const newAdmin = new Admin({
+            "nombre": 'Administrador',
+            "correo": 'Administrador@gmail.com',
+            "password": '123456789',
+            "role": 'ADMIN'
+        })
+        const salt = bcryptjs.genSaltSync();
+        newAdmin.password = bcryptjs.hashSync(newAdmin.password, salt);
+        await newAdmin.save();
+    }
+}
