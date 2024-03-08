@@ -8,10 +8,12 @@ import {
     deleteProduct
 } from "./product.controller.js";
 
-import { validarCampos  } from "../middlewares/validar-campos.js";
+import { validarCampos } from "../middlewares/validar-campos.js";
+export { esAdminRole, esClienteRole } from "../middlewares/validar-role.js";
 
 import  { validateJWT } from "../middlewares/validar-jwt.js";
 import { existingName, existsCategoryName } from "../helpers/db-validators.js";
+import { esAdminRole } from '../middlewares/validar-role.js';
 
 const router = Router();
 
@@ -21,6 +23,7 @@ router.post(
     "/",
     [
         validateJWT,
+        esAdminRole,
         check("nombre", "The name cannot be empty").not().isEmpty(),
         check("nombre").custom(existingName),
         check("descripcion", "The description cannot be empty").not().isEmpty(),
@@ -34,6 +37,7 @@ router.put(
     "/updateProduct/:nombre",
     [
         validateJWT,
+        esAdminRole,
         check('nombre', "Invalid").notEmpty(),
         validarCampos
     ], editProduct);
@@ -42,6 +46,7 @@ router.delete(
     "/deleteProduct/:nombre",
     [
         validateJWT,
+        esAdminRole,
         check('nombre', "Invalid").notEmpty(),
         validarCampos
     ], deleteProduct);
