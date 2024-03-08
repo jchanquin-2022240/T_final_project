@@ -57,3 +57,20 @@ export const deleteProduct = async (req, res) => {
 
     res.status(200).json({ msg: 'Product successfully removed'});
 }
+
+export const listProductByCategory = async (req, res) => {
+    const { categoria } = req.params;
+
+    try {
+        const products = await Product.find({ categoria: categoria });
+
+        if (products.length === 0) {
+            return res.status(404).json({ msg: `No products found for category: ${categoria}` });
+        }
+
+        res.status(200).json({ msg: 'Products', products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Internal Server Error' });
+    }
+};

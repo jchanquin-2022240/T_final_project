@@ -22,6 +22,8 @@ router.get("/", validateJWT, listProduct);
 
 router.get("/:nombre", validateJWT, listProductByName);
 
+router.get("/filterByCategory/:categoria", validateJWT, listProduct);
+
 router.post(
     "/",
     [
