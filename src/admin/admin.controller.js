@@ -35,14 +35,15 @@ export const adminPost = async (req = request, res = response ) => {
 }
 
 export const newAdmin = async(res) => {
-    const admin = await Admin.findOne({ correo: 'administrador@gmail.com' })
+    const admin = await Admin.findOne({ correo: "admin@gmail.com" });
+    console.log("admin created successfully", admin);
 
-    if(admin) {
-        res.status(400).json({ msg: 'The administrador already exist' });
+    if (admin) {
+        console.log('El administrador ya existe');
     } else {
         const newAdmin = new Admin({
             "nombre": 'Administrador',
-            "correo": 'Administrador@gmail.com',
+            "correo": 'admin@gmail.com',
             "password": '123456789',
             "role": 'ADMIN'
         })
