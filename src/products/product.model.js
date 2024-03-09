@@ -22,7 +22,7 @@ export const ProductSchema = mongoose.Schema({
         type: Number,
         require: [true, 'Stock is required']
     },
-    timesBought:{
+    tiempoCompra:{
         type: Number,
         default: 0
     },

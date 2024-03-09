@@ -1,10 +1,10 @@
-import shoppingCart from "./shoppingCart.model.js";
+import ShoppingCart from "./shoppingCart.model.js";
 import Product from "../products/product.model.js";
 
 export const addShoppingCart = async (req, res) => {
     try {
-        const user = req.user._id;
-        let cart = await shoppingCart.findOne({ user: user });
+        const cliente = req.client._id;
+        let cart = await ShoppingCart.findOne({ user: cliente });
 
         const { nombre, quantity } = req.body;
         const product = await Product.findOne({ nombre });
@@ -16,7 +16,8 @@ export const addShoppingCart = async (req, res) => {
         if(!cart){
             const subTotal = product.precio * quantity;
             const total = subTotal;
-            const shoppingCart = new shoppingCart({ user: user, 
+            const shoppingCart = new ShoppingCart({
+                user: cliente, 
                 products: [{ 
                 productId: product._id, quantity: quantity, subTotal: subTotal 
                 }], total: total });
@@ -36,7 +37,7 @@ export const addShoppingCart = async (req, res) => {
 
         cart.total = total;
         product.stock -= quantity;
-        product.timesBought += quantity;
+        product.tiempoCompra += quantity;
 
         if (product.stock === 0) {
             product.productEstado = false;
