@@ -86,3 +86,43 @@ export const listProductByCategory = async (req, res) => {
         res.status(500).json({ msg: 'Internal Server Error' });
     }
 };
+
+export const soldOut = async (req, res) => {
+    const query = { stock: 0, productEstado: false };
+
+    const [productsOutOfStock, products] = await Promise.all([
+        Product.countDocuments(query),
+        Product.find(query).populate({
+            path: "category",
+            select: "nombre -_id"
+        })
+    ]);
+
+    res.status(200).json({
+        msg: `Products out of stock or disabled in the database: ${productsOutOfStock}`,
+        products
+    });
+}
+
+export const mostSoldProduct = async (req, res) => {
+    try {
+        const mostSoldAvailableProducts = await Product.find({ productEstado: true, tiempoCompra: { $gt: 0 } })
+            .sort({ tiempoCompra: -1 })
+            .limit(10);
+
+        if (mostSoldAvailableProducts.length === 0) {
+            return res.status(404).json({
+                msg: "There are no matches"
+            });
+        }
+
+        res.status(200).json({
+            msg: "Most sold available products",
+            products: mostSoldAvailableProducts
+        });
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+};

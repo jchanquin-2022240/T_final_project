@@ -6,7 +6,9 @@ import {
     listProduct,
     editProduct,
     deleteProduct,
-    listProductByName
+    listProductByName,
+    soldOut,
+    mostSoldProduct
 } from "./product.controller.js";
 
 import { validarCampos } from "../middlewares/validar-campos.js";
@@ -23,6 +25,10 @@ router.get("/", validateJWT, listProduct);
 router.get("/:nombre", validateJWT, listProductByName);
 
 router.get("/filterByCategory/:categoria", validateJWT, listProduct);
+
+router.get("/soldOut", soldOut);
+
+router.get("/mostSoldProduct", mostSoldProduct);
 
 router.post(
     "/",

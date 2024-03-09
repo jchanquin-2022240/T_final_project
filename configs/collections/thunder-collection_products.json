@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "products",
-    "dateExported": "2024-03-09T01:56:00.735Z",
+    "dateExported": "2024-03-09T05:47:04.243Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -132,6 +132,44 @@
             ],
             "params": [],
             "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "caffb4ae-151c-4913-adf5-b2a7309ca5d8",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "get SoldOut",
+            "url": "http://localhost:3000/management/v1/product/soldOut",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-09T05:39:00.884Z",
+            "modified": "2024-03-09T05:41:29.317Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRiOTA5YzY3MTg1YTRkZjViMzVkZTQiLCJpYXQiOjE3MDk5NjE4MTUsImV4cCI6MTcwOTk2OTAxNX0.xMh22xn3Dmro54T5m__fYTBD2ErYg7KByhEAhcbGLqY"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "29114f27-a4c4-48e0-a4ae-38217c71ea02",
+            "colId": "7fa15ad8-0522-4dc4-a8da-2d6e22f5f6ba",
+            "containerId": "",
+            "name": "get mostSold",
+            "url": "http://localhost:3000/management/v1/product/mostSoldProduct",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-09T05:43:13.891Z",
+            "modified": "2024-03-09T05:44:02.649Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRiOTA5YzY3MTg1YTRkZjViMzVkZTQiLCJpYXQiOjE3MDk5NjE4MTUsImV4cCI6MTcwOTk2OTAxNX0.xMh22xn3Dmro54T5m__fYTBD2ErYg7KByhEAhcbGLqY"
+                }
+            ],
+            "params": [],
             "tests": []
         }
     ]
