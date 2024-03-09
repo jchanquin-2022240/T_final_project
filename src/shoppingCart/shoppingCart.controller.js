@@ -1,12 +1,12 @@
 import shoppingCart from "./shoppingCart.model.js";
-import Product from "../product/product.model.js";
+import Product from "../products/product.model.js";
 
 export const addShoppingCart = async (req, res) => {
     try {
         const user = req.user._id;
         let cart = await shoppingCart.findOne({ user: user });
 
-        const { productId, quantity } = req.body;
+        const { nombre, quantity } = req.body;
         const product = await Product.findOne({ nombre });
 
         if(!product) return res.status(404).send("Product not found");
@@ -22,7 +22,7 @@ export const addShoppingCart = async (req, res) => {
                 }], total: total });
                 
                 if (product.stock === 0) {
-                    product.availability = false;
+                    product.productEstado = false;
                 }
 
                 await product.save();
@@ -39,7 +39,7 @@ export const addShoppingCart = async (req, res) => {
         product.timesBought += quantity;
 
         if (product.stock === 0) {
-            product.availability = false;
+            product.productEstado = false;
         }
 
         await product.save();
