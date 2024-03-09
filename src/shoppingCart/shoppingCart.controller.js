@@ -9,26 +9,27 @@ export const addShoppingCart = async (req, res) => {
         const { nombre, quantity } = req.body;
         const product = await Product.findOne({ nombre });
 
-        if(!product) return res.status(404).send("Product not found");
+        if (!product) return res.status(404).send("Product not found");
 
-        if(product.stock < quantity) return res.status(400).send("Insufficient stock");
+        if (product.stock < quantity) return res.status(400).send("Insufficient stock");
 
-        if(!cart){
+        if (!cart) {
             const subTotal = product.precio * quantity;
             const total = subTotal;
             const shoppingCart = new ShoppingCart({
-                user: cliente, 
-                products: [{ 
-                productId: product._id, quantity: quantity, subTotal: subTotal 
-                }], total: total });
-                
-                if (product.stock === 0) {
-                    product.productEstado = false;
-                }
+                user: cliente,
+                products: [{
+                    productId: product._id, quantity: quantity, subTotal: subTotal
+                }], total: total
+            });
 
-                await product.save();
-                await shoppingCart.save();
-                return res.status(201).send("Product added to shopping cart");
+            if (product.stock === 0) {
+                product.productEstado = false;
+            }
+
+            await product.save();
+            await shoppingCart.save();
+            return res.status(201).send("Product added to shopping cart");
         }
 
         const subTotal = product.precio * quantity;
@@ -48,7 +49,7 @@ export const addShoppingCart = async (req, res) => {
 
         res.status(201).send("Product added to shopping cart");
 
-    }catch(err){
+    } catch (err) {
         console.error(err);
         res.status(500).send("Error adding product to shopping cart");
     }
